@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ca95c3adcdc347b2848280e34dc7fc1f" Name="Diagram1">
+        <EntityTypeShape EntityType="QLYCUOCDTModel.ACCOUNT" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYCUOCDTModel.ADMIN" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYCUOCDTModel.BILL" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYCUOCDTModel.CONTRACT" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYCUOCDTModel.CUSTOMER" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYCUOCDTModel.DETAIL" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYCUOCDTModel.FARE" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLYCUOCDTModel.SIM" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="QLYCUOCDTModel.FK_ACCOUNT_CUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYCUOCDTModel.FK_BILL_SIM" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYCUOCDTModel.FK_CONTRACT_SIM" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYCUOCDTModel.FK_SIM_CUSTOMER" ManuallyRouted="false" />
+        <AssociationConnector Association="QLYCUOCDTModel.FK_DETAIL_SIM" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLYCUOCDTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="EMAIL" />
+    </Key>
+    <Property Name="ID_ACCOUNT" Type="nvarchar" MaxLength="10" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID_CUSTOMER" Type="nvarchar" MaxLength="10" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="100" />
+    <Property Name="CONFIRMPASSWORD" Type="nvarchar" MaxLength="100" />
+    <Property Name="TYPE_ACCOUNT" Type="nvarchar" MaxLength="100" />
+    <Property Name="ISEMAILVERIFY" Type="bit" />
+    <Property Name="ACTIVATIONCODE" Type="uniqueidentifier" />
+    <Property Name="RESETPASSWORDCODE" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar" MaxLength="10" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="BILL">
+    <Key>
+      <PropertyRef Name="ID_BILL" />
+    </Key>
+    <Property Name="ID_BILL" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_SIM" Type="nvarchar" MaxLength="10" />
+    <Property Name="DATE_EXPORT" Type="datetime" />
+    <Property Name="DATE_CUT" Type="datetime" />
+    <Property Name="POSTAGE" Type="int" />
+    <Property Name="FARE" Type="int" />
+    <Property Name="STATUS" Type="bit" />
+  </EntityType>
+  <EntityType Name="CONTRACT">
+    <Key>
+      <PropertyRef Name="ID_CONTRACT" />
+    </Key>
+    <Property Name="ID_CONTRACT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_SIM" Type="nvarchar" MaxLength="10" />
+    <Property Name="DATEREGISTER" Type="datetime" />
+    <Property Name="FEE" Type="int" />
+    <Property Name="STATUS" Type="bit" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="ID_CUSTOMER" />
+    </Key>
+    <Property Name="ID_CUSTOMER" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDENTIFY" Type="int" />
+    <Property Name="JOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="POSITION" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_SIM" Type="nvarchar" MaxLength="10" />
+    <Property Name="TIME_START" Type="datetime" />
+    <Property Name="TIME_STOP" Type="datetime" />
+    <Property Name="MINUTE_AFTER7" Type="int" />
+    <Property Name="MINUTE_AFTER23" Type="int" />
+    <Property Name="FARE" Type="int" />
+  </EntityType>
+  <EntityType Name="FARE">
+    <Key>
+      <PropertyRef Name="ID_FARE" />
+    </Key>
+    <Property Name="ID_FARE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TIME_START" Type="time" Precision="7" />
+    <Property Name="TIME_STOP" Type="time" Precision="7" />
+    <Property Name="FARE" Type="int" />
+  </EntityType>
+  <EntityType Name="SIM">
+    <Key>
+      <PropertyRef Name="ID_SIM" />
+    </Key>
+    <Property Name="ID_SIM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ID_CUSTOMER" Type="nvarchar" MaxLength="10" />
+    <Property Name="PHONENUMBER" Type="int" />
+    <Property Name="STATUS" Type="bit" />
+  </EntityType>
+  <Association Name="FK_ACCOUNT_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Principal>
+      <Dependent Role="ACCOUNT">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILL_SIM">
+    <End Role="SIM" Type="Self.SIM" Multiplicity="0..1" />
+    <End Role="BILL" Type="Self.BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIM">
+        <PropertyRef Name="ID_SIM" />
+      </Principal>
+      <Dependent Role="BILL">
+        <PropertyRef Name="ID_SIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACT_SIM">
+    <End Role="SIM" Type="Self.SIM" Multiplicity="0..1" />
+    <End Role="CONTRACT" Type="Self.CONTRACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIM">
+        <PropertyRef Name="ID_SIM" />
+      </Principal>
+      <Dependent Role="CONTRACT">
+        <PropertyRef Name="ID_SIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETAIL_SIM">
+    <End Role="SIM" Type="Self.SIM" Multiplicity="0..1" />
+    <End Role="DETAIL" Type="Self.DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIM">
+        <PropertyRef Name="ID_SIM" />
+      </Principal>
+      <Dependent Role="DETAIL">
+        <PropertyRef Name="ID_SIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SIM_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+    <End Role="SIM" Type="Self.SIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Principal>
+      <Dependent Role="SIM">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLYCUOCDTModelStoreContainer">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BILL" EntityType="Self.BILL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTRACT" EntityType="Self.CONTRACT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETAIL" EntityType="Self.DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FARE" EntityType="Self.FARE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SIM" EntityType="Self.SIM" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ACCOUNT_CUSTOMER" Association="Self.FK_ACCOUNT_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILL_SIM" Association="Self.FK_BILL_SIM">
+      <End Role="SIM" EntitySet="SIM" />
+      <End Role="BILL" EntitySet="BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACT_SIM" Association="Self.FK_CONTRACT_SIM">
+      <End Role="SIM" EntitySet="SIM" />
+      <End Role="CONTRACT" EntitySet="CONTRACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETAIL_SIM" Association="Self.FK_DETAIL_SIM">
+      <End Role="SIM" EntitySet="SIM" />
+      <End Role="DETAIL" EntitySet="DETAIL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SIM_CUSTOMER" Association="Self.FK_SIM_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="SIM" EntitySet="SIM" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

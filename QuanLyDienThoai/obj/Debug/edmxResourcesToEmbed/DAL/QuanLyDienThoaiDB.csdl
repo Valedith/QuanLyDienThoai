@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLYCUOCDTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ACCOUNT">
+    <Key>
+      <PropertyRef Name="EMAIL" />
+    </Key>
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_CUSTOMER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CONFIRMPASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ISEMAILVERIFY" Type="Boolean" />
+    <Property Name="ACTIVATIONCODE" Type="Guid" />
+    <Property Name="RESETPASSWORDCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_ACCOUNT_CUSTOMER" FromRole="ACCOUNT" ToRole="CUSTOMER" />
+    <Property Name="ID_ACCOUNT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TYPE_ACCOUNT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BILL">
+    <Key>
+      <PropertyRef Name="ID_BILL" />
+    </Key>
+    <Property Name="ID_BILL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_SIM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DATE_EXPORT" Type="DateTime" Precision="3" />
+    <Property Name="DATE_CUT" Type="DateTime" Precision="3" />
+    <Property Name="POSTAGE" Type="Int32" />
+    <Property Name="FARE" Type="Int32" />
+    <Property Name="STATUS" Type="Boolean" />
+    <NavigationProperty Name="SIM" Relationship="Self.FK_BILL_SIM" FromRole="BILL" ToRole="SIM" />
+  </EntityType>
+  <EntityType Name="CONTRACT">
+    <Key>
+      <PropertyRef Name="ID_CONTRACT" />
+    </Key>
+    <Property Name="ID_CONTRACT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_SIM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DATEREGISTER" Type="DateTime" Precision="3" />
+    <Property Name="FEE" Type="Int32" />
+    <NavigationProperty Name="SIM" Relationship="Self.FK_CONTRACT_SIM" FromRole="CONTRACT" ToRole="SIM" />
+    <Property Name="STATUS" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="ID_CUSTOMER" />
+    </Key>
+    <Property Name="ID_CUSTOMER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDENTIFY" Type="Int32" />
+    <Property Name="JOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ACCOUNT" Relationship="Self.FK_ACCOUNT_CUSTOMER" FromRole="CUSTOMER" ToRole="ACCOUNT" />
+    <NavigationProperty Name="SIM" Relationship="Self.FK_SIM_CUSTOMER" FromRole="CUSTOMER" ToRole="SIM" />
+  </EntityType>
+  <EntityType Name="DETAIL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_SIM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TIME_START" Type="DateTime" Precision="3" />
+    <Property Name="TIME_STOP" Type="DateTime" Precision="3" />
+    <Property Name="MINUTE_AFTER7" Type="Int32" />
+    <Property Name="MINUTE_AFTER23" Type="Int32" />
+    <Property Name="FARE" Type="Int32" />
+    <NavigationProperty Name="SIM" Relationship="Self.FK_DETAIL_SIM" FromRole="DETAIL" ToRole="SIM" />
+  </EntityType>
+  <EntityType Name="FARE">
+    <Key>
+      <PropertyRef Name="ID_FARE" />
+    </Key>
+    <Property Name="ID_FARE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIME_START" Type="Time" Precision="7" />
+    <Property Name="TIME_STOP" Type="Time" Precision="7" />
+    <Property Name="FARE1" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SIM">
+    <Key>
+      <PropertyRef Name="ID_SIM" />
+    </Key>
+    <Property Name="ID_SIM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ID_CUSTOMER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PHONENUMBER" Type="Int32" />
+    <Property Name="STATUS" Type="Boolean" />
+    <NavigationProperty Name="BILL" Relationship="Self.FK_BILL_SIM" FromRole="SIM" ToRole="BILL" />
+    <NavigationProperty Name="CONTRACT" Relationship="Self.FK_CONTRACT_SIM" FromRole="SIM" ToRole="CONTRACT" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.FK_SIM_CUSTOMER" FromRole="SIM" ToRole="CUSTOMER" />
+    <NavigationProperty Name="DETAIL" Relationship="Self.FK_DETAIL_SIM" FromRole="SIM" ToRole="DETAIL" />
+  </EntityType>
+  <Association Name="FK_ACCOUNT_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+    <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Principal>
+      <Dependent Role="ACCOUNT">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BILL_SIM">
+    <End Role="SIM" Type="Self.SIM" Multiplicity="0..1" />
+    <End Role="BILL" Type="Self.BILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIM">
+        <PropertyRef Name="ID_SIM" />
+      </Principal>
+      <Dependent Role="BILL">
+        <PropertyRef Name="ID_SIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CONTRACT_SIM">
+    <End Role="SIM" Type="Self.SIM" Multiplicity="0..1" />
+    <End Role="CONTRACT" Type="Self.CONTRACT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIM">
+        <PropertyRef Name="ID_SIM" />
+      </Principal>
+      <Dependent Role="CONTRACT">
+        <PropertyRef Name="ID_SIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SIM_CUSTOMER">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+    <End Role="SIM" Type="Self.SIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Principal>
+      <Dependent Role="SIM">
+        <PropertyRef Name="ID_CUSTOMER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETAIL_SIM">
+    <End Role="SIM" Type="Self.SIM" Multiplicity="0..1" />
+    <End Role="DETAIL" Type="Self.DETAIL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SIM">
+        <PropertyRef Name="ID_SIM" />
+      </Principal>
+      <Dependent Role="DETAIL">
+        <PropertyRef Name="ID_SIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLYCUOCDT_DB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" />
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" />
+    <EntitySet Name="BILL" EntityType="Self.BILL" />
+    <EntitySet Name="CONTRACT" EntityType="Self.CONTRACT" />
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" />
+    <EntitySet Name="DETAIL" EntityType="Self.DETAIL" />
+    <EntitySet Name="FARE" EntityType="Self.FARE" />
+    <EntitySet Name="SIM" EntityType="Self.SIM" />
+    <AssociationSet Name="FK_ACCOUNT_CUSTOMER" Association="Self.FK_ACCOUNT_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BILL_SIM" Association="Self.FK_BILL_SIM">
+      <End Role="SIM" EntitySet="SIM" />
+      <End Role="BILL" EntitySet="BILL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CONTRACT_SIM" Association="Self.FK_CONTRACT_SIM">
+      <End Role="SIM" EntitySet="SIM" />
+      <End Role="CONTRACT" EntitySet="CONTRACT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SIM_CUSTOMER" Association="Self.FK_SIM_CUSTOMER">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="SIM" EntitySet="SIM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETAIL_SIM" Association="Self.FK_DETAIL_SIM">
+      <End Role="SIM" EntitySet="SIM" />
+      <End Role="DETAIL" EntitySet="DETAIL" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

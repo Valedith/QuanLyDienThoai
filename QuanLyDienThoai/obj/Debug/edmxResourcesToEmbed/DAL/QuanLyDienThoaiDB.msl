@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLYCUOCDTModelStoreContainer" CdmEntityContainer="QLYCUOCDT_DB">
+    <EntitySetMapping Name="ACCOUNT">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="TYPE_ACCOUNT" ColumnName="TYPE_ACCOUNT" />
+          <ScalarProperty Name="ID_ACCOUNT" ColumnName="ID_ACCOUNT" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ID_CUSTOMER" ColumnName="ID_CUSTOMER" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="CONFIRMPASSWORD" ColumnName="CONFIRMPASSWORD" />
+          <ScalarProperty Name="ISEMAILVERIFY" ColumnName="ISEMAILVERIFY" />
+          <ScalarProperty Name="ACTIVATIONCODE" ColumnName="ACTIVATIONCODE" />
+          <ScalarProperty Name="RESETPASSWORDCODE" ColumnName="RESETPASSWORDCODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMIN">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BILL">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.BILL">
+        <MappingFragment StoreEntitySet="BILL">
+          <ScalarProperty Name="ID_BILL" ColumnName="ID_BILL" />
+          <ScalarProperty Name="ID_SIM" ColumnName="ID_SIM" />
+          <ScalarProperty Name="DATE_EXPORT" ColumnName="DATE_EXPORT" />
+          <ScalarProperty Name="DATE_CUT" ColumnName="DATE_CUT" />
+          <ScalarProperty Name="POSTAGE" ColumnName="POSTAGE" />
+          <ScalarProperty Name="FARE" ColumnName="FARE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRACT">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.CONTRACT">
+        <MappingFragment StoreEntitySet="CONTRACT">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ID_CONTRACT" ColumnName="ID_CONTRACT" />
+          <ScalarProperty Name="ID_SIM" ColumnName="ID_SIM" />
+          <ScalarProperty Name="DATEREGISTER" ColumnName="DATEREGISTER" />
+          <ScalarProperty Name="FEE" ColumnName="FEE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMER">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="ID_CUSTOMER" ColumnName="ID_CUSTOMER" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="IDENTIFY" ColumnName="IDENTIFY" />
+          <ScalarProperty Name="JOB" ColumnName="JOB" />
+          <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETAIL">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.DETAIL">
+        <MappingFragment StoreEntitySet="DETAIL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_SIM" ColumnName="ID_SIM" />
+          <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+          <ScalarProperty Name="TIME_STOP" ColumnName="TIME_STOP" />
+          <ScalarProperty Name="MINUTE_AFTER7" ColumnName="MINUTE_AFTER7" />
+          <ScalarProperty Name="MINUTE_AFTER23" ColumnName="MINUTE_AFTER23" />
+          <ScalarProperty Name="FARE" ColumnName="FARE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FARE">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.FARE">
+        <MappingFragment StoreEntitySet="FARE">
+          <ScalarProperty Name="ID_FARE" ColumnName="ID_FARE" />
+          <ScalarProperty Name="TIME_START" ColumnName="TIME_START" />
+          <ScalarProperty Name="TIME_STOP" ColumnName="TIME_STOP" />
+          <ScalarProperty Name="FARE1" ColumnName="FARE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIM">
+      <EntityTypeMapping TypeName="QLYCUOCDTModel.SIM">
+        <MappingFragment StoreEntitySet="SIM">
+          <ScalarProperty Name="ID_SIM" ColumnName="ID_SIM" />
+          <ScalarProperty Name="ID_CUSTOMER" ColumnName="ID_CUSTOMER" />
+          <ScalarProperty Name="PHONENUMBER" ColumnName="PHONENUMBER" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{428B56A1-3C8E-474A-BE22-BD61E7B1F099}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuanLyDienThoai</RootNamespace>
+    <AssemblyName>QuanLyDienThoai</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Map.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.1.DataModel, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.1.DataModel.EF6, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.1.DataModel.EFCore, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.1.ViewModel, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\AdminBUS.cs" />
+    <Compile Include="BUS\ContractBUS.cs" />
+    <Compile Include="BUS\CustomerBUS.cs" />
+    <Compile Include="BUS\SimBUS.cs" />
+    <Compile Include="DAL\ACCOUNT.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ADMIN.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AdminDAL.cs" />
+    <Compile Include="DAL\BILL.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CONTRACT.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ContractDAL.cs" />
+    <Compile Include="DAL\CUSTOMER.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CustomerDAL.cs" />
+    <Compile Include="DAL\DETAIL.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\FARE.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\QuanLyDienThoaiDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDienThoaiDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\QuanLyDienThoaiDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\QuanLyDienThoaiDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SIM.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SimDAL.cs" />
+    <Compile Include="DAL\sysdiagrams.cs">
+      <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Bill_GUI\AddBill_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Bill_GUI\AddBill_GUI.Designer.cs">
+      <DependentUpon>AddBill_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Bill_GUI\Bill_GUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Bill_GUI\Bill_GUI.Designer.cs">
+      <DependentUpon>Bill_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Customer_GUI\AddCustomer_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer_GUI\AddCustomer_GUI.Designer.cs">
+      <DependentUpon>AddCustomer_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Customer_GUI\Customer_GUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Customer_GUI\Customer_GUI.Designer.cs">
+      <DependentUpon>Customer_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Detail_GUI\AddDetail_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Detail_GUI\AddDetail_GUI.Designer.cs">
+      <DependentUpon>AddDetail_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Detail_GUI\Detail_GUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Detail_GUI\Detail_GUI.Designer.cs">
+      <DependentUpon>Detail_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Fare_GUI\Fare_GUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Fare_GUI\Fare_GUI.Designer.cs">
+      <DependentUpon>Fare_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Loading_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Loading_GUI.Designer.cs">
+      <DependentUpon>Loading_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Main_GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Main_GUI.Designer.cs">
+      <DependentUpon>Main_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sim_GUI\Sim_GUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sim_GUI\Sim_GUI.Designer.cs">
+      <DependentUpon>Sim_GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\MD5Hash.cs" />
+    <Compile Include="Public\MessageBoxManager.cs" />
+    <Compile Include="Public\RandomGenerator.cs" />
+    <EmbeddedResource Include="GUI\Bill_GUI\AddBill_GUI.resx">
+      <DependentUpon>AddBill_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Bill_GUI\Bill_GUI.resx">
+      <DependentUpon>Bill_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Customer_GUI\AddCustomer_GUI.resx">
+      <DependentUpon>AddCustomer_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Customer_GUI\Customer_GUI.resx">
+      <DependentUpon>Customer_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Detail_GUI\AddDetail_GUI.resx">
+      <DependentUpon>AddDetail_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Detail_GUI\Detail_GUI.resx">
+      <DependentUpon>Detail_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Fare_GUI\Fare_GUI.resx">
+      <DependentUpon>Fare_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Loading_GUI.resx">
+      <DependentUpon>Loading_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main_GUI.resx">
+      <DependentUpon>Main_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sim_GUI\Sim_GUI.resx">
+      <DependentUpon>Sim_GUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="DAL\QuanLyDienThoaiDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyDienThoaiDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAL\QuanLyDienThoaiDB.edmx.diagram">
+      <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\QuanLyDienThoaiDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+      <LastGenOutput>QuanLyDienThoaiDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\QuanLyDienThoaiDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyDienThoaiDB.edmx</DependentUpon>
+      <LastGenOutput>QuanLyDienThoaiDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="img\call.ico" />
+    <Content Include="img\call.png" />
+    <Content Include="img\exit_icon_white.png" />
+    <Content Include="img\icon_passwd.png" />
+    <Content Include="img\icon_user.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\logout_icon.png" />
+    <Content Include="img\password_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
