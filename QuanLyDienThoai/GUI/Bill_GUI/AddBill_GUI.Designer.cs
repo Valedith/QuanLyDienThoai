@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions16 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBill_GUI));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions17 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions18 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions19 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions20 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.function_panel_btn = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.pnl_title_winform = new System.Windows.Forms.Panel();
             this.pnl_icon_logo = new System.Windows.Forms.Panel();
@@ -41,22 +41,22 @@
             this.title_winform = new System.Windows.Forms.Label();
             this.lbl_name = new DevExpress.XtraEditors.LabelControl();
             this.form_info = new System.Windows.Forms.Panel();
-            this.pnl_ID = new System.Windows.Forms.Panel();
-            this.pnl_name = new System.Windows.Forms.Panel();
-            this.pnl_window_add = new System.Windows.Forms.Panel();
             this.pnl_job = new System.Windows.Forms.Panel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.num_Postage = new System.Windows.Forms.NumericUpDown();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.pnl_ID = new System.Windows.Forms.Panel();
             this.date_Export = new System.Windows.Forms.DateTimePicker();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.pnl_name = new System.Windows.Forms.Panel();
             this.cb_Sim = new System.Windows.Forms.ComboBox();
+            this.pnl_window_add = new System.Windows.Forms.Panel();
             this.pnl_title_winform.SuspendLayout();
             this.form_info.SuspendLayout();
+            this.pnl_job.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Postage)).BeginInit();
             this.pnl_ID.SuspendLayout();
             this.pnl_name.SuspendLayout();
             this.pnl_window_add.SuspendLayout();
-            this.pnl_job.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_Postage)).BeginInit();
             this.SuspendLayout();
             // 
             // function_panel_btn
@@ -73,17 +73,17 @@
             this.function_panel_btn.AppearanceButton.Pressed.Options.UseFont = true;
             this.function_panel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.function_panel_btn.ButtonInterval = 20;
-            windowsUIButtonImageOptions16.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions16.Image")));
-            windowsUIButtonImageOptions17.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions17.Image")));
-            windowsUIButtonImageOptions18.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions18.Image")));
-            windowsUIButtonImageOptions19.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions19.Image")));
-            windowsUIButtonImageOptions20.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions20.Image")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
             this.function_panel_btn.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions16, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Thêm mới", true, windowsUIButtonImageOptions17, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_new", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Đóng", true, windowsUIButtonImageOptions18, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_close", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm lại", true, windowsUIButtonImageOptions19, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đóng", true, windowsUIButtonImageOptions20, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Thêm mới", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_new", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Đóng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_close", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm lại", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đóng", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
             this.function_panel_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.function_panel_btn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.function_panel_btn.Location = new System.Drawing.Point(0, 324);
@@ -160,35 +160,6 @@
             this.form_info.TabIndex = 15;
             this.form_info.Paint += new System.Windows.Forms.PaintEventHandler(this.form_info_Paint);
             // 
-            // pnl_ID
-            // 
-            this.pnl_ID.Controls.Add(this.date_Export);
-            this.pnl_ID.Location = new System.Drawing.Point(131, 63);
-            this.pnl_ID.Name = "pnl_ID";
-            this.pnl_ID.Size = new System.Drawing.Size(362, 33);
-            this.pnl_ID.TabIndex = 18;
-            this.pnl_ID.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_Paint);
-            // 
-            // pnl_name
-            // 
-            this.pnl_name.Controls.Add(this.cb_Sim);
-            this.pnl_name.Location = new System.Drawing.Point(131, 13);
-            this.pnl_name.Name = "pnl_name";
-            this.pnl_name.Size = new System.Drawing.Size(362, 33);
-            this.pnl_name.TabIndex = 16;
-            this.pnl_name.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_Paint);
-            // 
-            // pnl_window_add
-            // 
-            this.pnl_window_add.Controls.Add(this.pnl_title_winform);
-            this.pnl_window_add.Controls.Add(this.function_panel_btn);
-            this.pnl_window_add.Controls.Add(this.form_info);
-            this.pnl_window_add.Location = new System.Drawing.Point(0, 0);
-            this.pnl_window_add.Name = "pnl_window_add";
-            this.pnl_window_add.Size = new System.Drawing.Size(517, 387);
-            this.pnl_window_add.TabIndex = 16;
-            this.pnl_window_add.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_window_add_Paint);
-            // 
             // pnl_job
             // 
             this.pnl_job.Controls.Add(this.num_Postage);
@@ -197,28 +168,6 @@
             this.pnl_job.Size = new System.Drawing.Size(362, 33);
             this.pnl_job.TabIndex = 18;
             this.pnl_job.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_Paint);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl2.Location = new System.Drawing.Point(15, 113);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(109, 33);
-            this.labelControl2.TabIndex = 17;
-            this.labelControl2.Text = "Phí thuê bao";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl1.Location = new System.Drawing.Point(15, 63);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(109, 33);
-            this.labelControl1.TabIndex = 17;
-            this.labelControl1.Text = "Ngày lập phiếu";
             // 
             // num_Postage
             // 
@@ -238,14 +187,56 @@
             0,
             0});
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl2.Location = new System.Drawing.Point(15, 113);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(109, 33);
+            this.labelControl2.TabIndex = 17;
+            this.labelControl2.Text = "Phí thuê bao";
+            // 
+            // pnl_ID
+            // 
+            this.pnl_ID.Controls.Add(this.date_Export);
+            this.pnl_ID.Location = new System.Drawing.Point(131, 63);
+            this.pnl_ID.Name = "pnl_ID";
+            this.pnl_ID.Size = new System.Drawing.Size(362, 33);
+            this.pnl_ID.TabIndex = 18;
+            this.pnl_ID.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_Paint);
+            // 
             // date_Export
             // 
+            this.date_Export.CustomFormat = "dd/MM/yyyy";
             this.date_Export.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.date_Export.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.date_Export.Location = new System.Drawing.Point(3, 4);
             this.date_Export.Margin = new System.Windows.Forms.Padding(0);
             this.date_Export.Name = "date_Export";
             this.date_Export.Size = new System.Drawing.Size(346, 22);
             this.date_Export.TabIndex = 19;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Location = new System.Drawing.Point(15, 63);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(109, 33);
+            this.labelControl1.TabIndex = 17;
+            this.labelControl1.Text = "Ngày lập phiếu";
+            // 
+            // pnl_name
+            // 
+            this.pnl_name.Controls.Add(this.cb_Sim);
+            this.pnl_name.Location = new System.Drawing.Point(131, 13);
+            this.pnl_name.Name = "pnl_name";
+            this.pnl_name.Size = new System.Drawing.Size(362, 33);
+            this.pnl_name.TabIndex = 16;
+            this.pnl_name.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_Paint);
             // 
             // cb_Sim
             // 
@@ -255,6 +246,17 @@
             this.cb_Sim.Name = "cb_Sim";
             this.cb_Sim.Size = new System.Drawing.Size(346, 23);
             this.cb_Sim.TabIndex = 21;
+            // 
+            // pnl_window_add
+            // 
+            this.pnl_window_add.Controls.Add(this.pnl_title_winform);
+            this.pnl_window_add.Controls.Add(this.function_panel_btn);
+            this.pnl_window_add.Controls.Add(this.form_info);
+            this.pnl_window_add.Location = new System.Drawing.Point(0, 0);
+            this.pnl_window_add.Name = "pnl_window_add";
+            this.pnl_window_add.Size = new System.Drawing.Size(517, 387);
+            this.pnl_window_add.TabIndex = 16;
+            this.pnl_window_add.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_window_add_Paint);
             // 
             // AddBill_GUI
             // 
@@ -270,11 +272,11 @@
             this.Text = "AddCustome_GUI";
             this.pnl_title_winform.ResumeLayout(false);
             this.form_info.ResumeLayout(false);
+            this.pnl_job.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.num_Postage)).EndInit();
             this.pnl_ID.ResumeLayout(false);
             this.pnl_name.ResumeLayout(false);
             this.pnl_window_add.ResumeLayout(false);
-            this.pnl_job.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.num_Postage)).EndInit();
             this.ResumeLayout(false);
 
         }

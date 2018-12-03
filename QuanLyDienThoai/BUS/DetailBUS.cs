@@ -73,9 +73,16 @@ namespace QuanLyDienThoai.BUS
             CountTimeNormalThreshold(TimeSpan.FromTicks(Math.Min(limitedStartTime.Ticks, limitedEndTime.Ticks)),
                                     TimeSpan.FromTicks(Math.Max(limitedStartTime.Ticks, limitedEndTime.Ticks)), yourStartTime, yourEndTime, ref totalMin1, ref totalMin2);
         }
+        public void checkSplitDate(DateTime currentDate)
+        {
+        }
         public IEnumerable<DETAIL> SearchByIDSIM(string id)
         {
             return detail_dal.SearchByIDSIM(id);
+        }
+        public int GetFare(string sim_id,DateTime date_export,DateTime date_cut)
+        {
+            return detail_dal.GetFare(sim_id,date_export,date_cut);
         }
     }
 }

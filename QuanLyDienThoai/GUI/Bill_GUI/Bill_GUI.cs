@@ -13,6 +13,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraBars.Docking2010;
 using QuanLyDienThoai.GUI.Bill_GUI;
 using QuanLyDienThoai.DAL;
+using DevExpress.Utils;
 
 namespace QuanLyDienThoai.GUI.Bill_GUI
 {
@@ -24,24 +25,8 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         public Bill_GUI()
         {
             InitializeComponent();
-            cb_sim_Load();
         }
-
-        private void cb_sim_Load()
-        {
-            cb_Sim.DataSource = sim.GetAll().AsEnumerable().Select(row => new
-            {
-                Text = String.Format("{0,5}", row.ID_SIM),
-                Value = row.ID_SIM
-            }).ToList();
-
-            cb_Sim.DisplayMember = "Text";
-            cb_Sim.ValueMember = "Value";
-
-            cb_Sim.SelectedItem = null;
-            cb_Sim.Text = "Mã sim";
-
-        }
+        
         private void table_customer_Load(object sender, EventArgs e)
         {
             loadDataTable();
@@ -104,10 +89,10 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             txt_id.Text = gridView1.GetFocusedRowCellValue("ID_BILL").ToString();
-            cb_Sim.SelectedValue = gridView1.GetFocusedRowCellValue("ID_SIM").ToString();
-            date_Export.Value = DateTime.Parse(gridView1.GetFocusedRowCellValue("DATE_EXPORT").ToString());
+            txt_SIM.Text = gridView1.GetFocusedRowCellValue("ID_SIM").ToString();
+            txt_dateex.Text = gridView1.GetFocusedRowCellValue("DATE_EXPORT").ToString();
             txt_datecut.Text = gridView1.GetFocusedRowCellValue("DATE_CUT").ToString();
-            num_Postage.Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("POSTAGE").ToString());
+            txt_postage.Text = gridView1.GetFocusedRowCellValue("POSTAGE").ToString();
             txt_fare.Text = gridView1.GetFocusedRowCellValue("FARE").ToString();
             if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("STATUS")) == true)
                 txt_status.Text = "Đã thanh toán";
@@ -123,7 +108,11 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             ((GridView)table_bill.MainView).Columns[0].Caption = "Mã hóa đơn";
             ((GridView)table_bill.MainView).Columns[1].Caption = "Mã Sim";
             ((GridView)table_bill.MainView).Columns[2].Caption = "Ngày xuất phiếu";
+            ((GridView)table_bill.MainView).Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
+            ((GridView)table_bill.MainView).Columns[2].DisplayFormat.FormatString = "dd/MM/yyyy";
             ((GridView)table_bill.MainView).Columns[3].Caption = "Ngày cắt";
+            ((GridView)table_bill.MainView).Columns[3].DisplayFormat.FormatType = FormatType.DateTime;
+            ((GridView)table_bill.MainView).Columns[3].DisplayFormat.FormatString = "dd/MM/yyyy";
             ((GridView)table_bill.MainView).Columns[4].Caption = "Cước thuê bao";
             ((GridView)table_bill.MainView).Columns[5].Caption = "Cước phí hàng tháng";
             ((GridView)table_bill.MainView).Columns[6].Caption = "Tình trạng";
@@ -132,10 +121,7 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
 
         private void clear()
         {
-            txt_id.Text = txt_status.Text = txt_fare.Text = txt_datecut.Text = "";
-            num_Postage.Value = 50000; date_Export.Value = DateTime.Now;
-            cb_Sim.SelectedItem = null;
-            cb_Sim.Text = "Mã sim";
+            txt_id.Text = txt_status.Text = txt_fare.Text = txt_datecut.Text =txt_SIM.Text=txt_postage.Text=txt_dateex.Text = "";
         }
 
         // Function làm tươi danh sách
@@ -157,10 +143,10 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             else
             {
                 txt_id.Text = gridView1.GetFocusedRowCellValue("ID_BILL").ToString();
-                cb_Sim.SelectedValue = gridView1.GetFocusedRowCellValue("ID_SIM").ToString();
-                date_Export.Value = DateTime.Parse(gridView1.GetFocusedRowCellValue("DATE_EXPORT").ToString());
+                txt_SIM.Text = gridView1.GetFocusedRowCellValue("ID_SIM").ToString();
+                txt_dateex.Text = gridView1.GetFocusedRowCellValue("DATE_EXPORT").ToString();
                 txt_datecut.Text = gridView1.GetFocusedRowCellValue("DATE_CUT").ToString();
-                num_Postage.Value = Convert.ToInt32(gridView1.GetFocusedRowCellValue("POSTAGE").ToString());
+                txt_postage.Text = gridView1.GetFocusedRowCellValue("POSTAGE").ToString();
                 txt_fare.Text = gridView1.GetFocusedRowCellValue("FARE").ToString();
                 if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("STATUS")) == true)
                     txt_status.Text = "Đã thanh toán";

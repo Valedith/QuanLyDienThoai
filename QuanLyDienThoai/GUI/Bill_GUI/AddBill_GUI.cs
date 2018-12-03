@@ -15,6 +15,7 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
     public partial class AddBill_GUI : Form
     {
         BillBUS bill = new BillBUS();
+        DetailBUS detail = new DetailBUS();
         SimBUS sim = new SimBUS();
         public AddBill_GUI()
         {
@@ -99,21 +100,25 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             MessageBox.Show(StringMessage, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // Function Thêm khách hàng
+        // Function Thêm hóa đơn
         private void Add()
         {
-            bill.Create(cb_Sim.SelectedValue.ToString(), date_Export.Value, date_Export.Value.AddMonths(1), Convert.ToInt32(num_Postage.Value), 0, false);
+            var Id_SIM = cb_Sim.SelectedValue.ToString();
+            var date_export = date_Export.Value;
+            var date_cut = date_Export.Value.AddMonths(1);
+            var TotalFare = detail.GetFare(Id_SIM, date_export , date_cut );
+            bill.Create(Id_SIM, date_export, date_cut, Convert.ToInt32(num_Postage.Value),TotalFare + Convert.ToInt32(num_Postage.Value), false);
             Print_MessageBox("Thêm thành công hóa đơn", "Thông báo thêm");
         }
 
-        // Function Thêm khách hàng ==> refresh
+        // Function Thêm hóa đơn ==> refresh
         private void Add_New()
         {
             Add();
             Refresh_All();
         }
 
-        // Function Thêm khách hàng ==> close
+        // Function Thêm hóa đơn ==> close
         private void Add_Close()
         {
             Add();

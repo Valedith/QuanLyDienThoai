@@ -13,6 +13,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraBars.Docking2010;
 using QuanLyDienThoai.GUI.Detail_GUI;
 using QuanLyDienThoai.DAL;
+using DevExpress.Utils;
 
 namespace QuanLyDienThoai.GUI.Detail_GUI
 {
@@ -53,7 +54,7 @@ namespace QuanLyDienThoai.GUI.Detail_GUI
         private void Button_exe_panel_ButtonClick(object sender, ButtonEventArgs e)
         {
             WindowsUIButton btn = e.Button as WindowsUIButton;
-            if (btn.Tag != null && btn.Tag.Equals("add"))
+            if (btn.Tag != null && btn.Tag.Equals("import"))
             {                
                 popup_add();
             }
@@ -75,7 +76,11 @@ namespace QuanLyDienThoai.GUI.Detail_GUI
             ((GridView)table_detail.MainView).Columns[0].Caption = "Mã chi tiết cước tháng";
             ((GridView)table_detail.MainView).Columns[1].Caption = "Mã SIM";
             ((GridView)table_detail.MainView).Columns[2].Caption = "Thời gian bắt đầu";
+            ((GridView)table_detail.MainView).Columns[2].DisplayFormat.FormatType = FormatType.DateTime;
+            ((GridView)table_detail.MainView).Columns[2].DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
             ((GridView)table_detail.MainView).Columns[3].Caption = "Thời gian kết thúc";
+            ((GridView)table_detail.MainView).Columns[3].DisplayFormat.FormatType = FormatType.DateTime;
+            ((GridView)table_detail.MainView).Columns[3].DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
             ((GridView)table_detail.MainView).Columns[4].Caption = "Số phút trong khung giờ chính";
             ((GridView)table_detail.MainView).Columns[5].Caption = "Số phút trong khung giờ phụ";
             ((GridView)table_detail.MainView).Columns[6].Caption = "Tổng giá cước";

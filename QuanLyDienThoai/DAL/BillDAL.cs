@@ -52,13 +52,11 @@ namespace QuanLyDienThoai.DAL
             }
             bill.ID_BILL = id_str + numeric_value.ToString();
 
-
             db.BILLs.Add(bill);
             db.SaveChanges();
 
             db.Entry(bill).State = EntityState.Detached;
         }
-
         public void Delete()
         {
             var delete_bill = db.BILLs.First(p => p.ID_BILL == bill.ID_BILL);

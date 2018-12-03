@@ -81,8 +81,8 @@ namespace QuanLyDienThoai.GUI
         // Add user control của các dịch vụ vào navigationFrame1
         private void add_user_control()
         {
-            pnl_service_customer.Controls.Add(new Customer_GUI.Customer_GUI());
-            pnl_service_sim.Controls.Add(new Sim_GUI.Sim_GUI());
+            pnl_service_customer.Controls.Add(new Detail_GUI.Detail_GUI());
+            pnl_service_sim.Controls.Add(new Bill_GUI.Bill_GUI());
         }
         
     }

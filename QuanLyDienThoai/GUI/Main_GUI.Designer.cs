@@ -235,7 +235,7 @@
             this.date_time.CaseMonthNames = DevExpress.XtraEditors.Controls.TextCaseMode.UpperCase;
             this.date_time.DateTime = new System.DateTime(2018, 11, 27, 0, 0, 0, 0);
             this.date_time.EditValue = new System.DateTime(2018, 11, 27, 0, 0, 0, 0);
-            this.date_time.FirstDayOfWeek = System.DayOfWeek.Monday;
+            this.date_time.FirstDayOfWeek = System.DayOfWeek.Sunday;
             this.date_time.Location = new System.Drawing.Point(1, 216);
             this.date_time.Name = "date_time";
             this.date_time.Size = new System.Drawing.Size(215, 238);
@@ -379,7 +379,6 @@
             // 
             // titlebar_service
             // 
-            this.titlebar_service.AllowDrag = false;
             this.titlebar_service.AllowItemHover = false;
             this.titlebar_service.AllowSelectedItem = true;
             this.titlebar_service.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -390,7 +389,7 @@
             this.titlebar_service.LookAndFeel.UseDefaultLookAndFeel = false;
             this.titlebar_service.MaxId = 7;
             this.titlebar_service.Name = "titlebar_service";
-            this.titlebar_service.Position = 133;
+            this.titlebar_service.Position = 176;
             this.titlebar_service.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.titlebar_service.SelectedItem = this.title_item_sim;
             this.titlebar_service.SelectionBorderWidth = 2;
@@ -403,12 +402,12 @@
             // 
             // pnl_all_service
             // 
+            this.pnl_all_service.Controls.Add(this.pnl_service_sim);
             this.pnl_all_service.Controls.Add(this.pnl_service_dashboard);
             this.pnl_all_service.Controls.Add(this.pnl_service_customer);
-            this.pnl_all_service.Controls.Add(this.pnl_service_sim);
             this.pnl_all_service.Controls.Add(this.pnl_service_contracts);
-            this.pnl_all_service.Controls.Add(this.pnl_service_orders);
             this.pnl_all_service.Controls.Add(this.pnl_use_service);
+            this.pnl_all_service.Controls.Add(this.pnl_service_orders);
             this.pnl_all_service.Location = new System.Drawing.Point(217, 143);
             this.pnl_all_service.Name = "pnl_all_service";
             this.pnl_all_service.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
@@ -427,37 +426,35 @@
             // 
             this.pnl_service_dashboard.Caption = "pnl_service_dashboard";
             this.pnl_service_dashboard.Name = "pnl_service_dashboard";
-            this.pnl_service_dashboard.Size = new System.Drawing.Size(885, 527);
+            this.pnl_service_dashboard.Size = new System.Drawing.Size(809, 477);
             // 
             // pnl_service_customer
             // 
             this.pnl_service_customer.Caption = "pnl_service_customer";
             this.pnl_service_customer.Name = "pnl_service_customer";
-            this.pnl_service_customer.Size = new System.Drawing.Size(885, 527);
+            this.pnl_service_customer.Size = new System.Drawing.Size(809, 477);
             // 
             // pnl_service_sim
             // 
-            this.pnl_service_sim.Caption = "pnl_service_sim";
             this.pnl_service_sim.Name = "pnl_service_sim";
-            this.pnl_service_sim.Size = new System.Drawing.Size(885, 527);
+            this.pnl_service_sim.Size = new System.Drawing.Size(809, 477);
             // 
             // pnl_service_contracts
             // 
-            this.pnl_service_contracts.Caption = "pnl_service_contracts";
             this.pnl_service_contracts.Name = "pnl_service_contracts";
-            this.pnl_service_contracts.Size = new System.Drawing.Size(885, 527);
+            this.pnl_service_contracts.Size = new System.Drawing.Size(809, 477);
             // 
             // pnl_service_orders
             // 
             this.pnl_service_orders.Caption = "pnl_service_orders";
             this.pnl_service_orders.Name = "pnl_service_orders";
-            this.pnl_service_orders.Size = new System.Drawing.Size(885, 527);
+            this.pnl_service_orders.Size = new System.Drawing.Size(809, 477);
             // 
             // pnl_use_service
             // 
             this.pnl_use_service.Caption = "pnl_use_service";
             this.pnl_use_service.Name = "pnl_use_service";
-            this.pnl_use_service.Size = new System.Drawing.Size(885, 527);
+            this.pnl_use_service.Size = new System.Drawing.Size(809, 477);
             // 
             // pnl_footer
             // 
@@ -499,11 +496,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1101, 704);
             this.Controls.Add(this.pnl_footer);
-            this.Controls.Add(this.pnl_all_service);
             this.Controls.Add(this.titlebar_service);
             this.Controls.Add(this.pnl_sidebar);
             this.Controls.Add(this.pnl_main_logo);
             this.Controls.Add(this.pnl_title_winform);
+            this.Controls.Add(this.pnl_all_service);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

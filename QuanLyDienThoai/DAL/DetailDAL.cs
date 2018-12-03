@@ -93,5 +93,18 @@ namespace QuanLyDienThoai.DAL
             }
             return null;
         }
+
+        public int GetFare(string sim_id,DateTime date_export, DateTime date_cut)
+        {
+            var results = from detail in db.DETAILs
+                          where date_export <= detail.TIME_START && date_cut >= detail.TIME_STOP && detail.ID_SIM == sim_id
+                          group detail by detail.ID_SIM into g
+                          select new
+                          {
+                              SimID = g.Key,
+                              TotalFare = g.Sum(x => x.FARE)
+                          };
+            return Convert.ToInt32(results.Select(a => a.TotalFare).SingleOrDefault());
+        }
     }
 }
