@@ -44,5 +44,16 @@ namespace QuanLyDienThoai.BUS
                 return "Đã lưu thay đổi !";
             }
         }
+        public string lockSim(string id)
+        {
+            sim_dal.setSim(id);
+            sim_dal.lockSim();
+            return "Khóa SIM thành cống !";
+        }
+        public bool checkifLocked(string id)
+        {
+            sim_dal.setSim(id);
+            return sim_dal.checkifLocked();
+        }
     }
 }

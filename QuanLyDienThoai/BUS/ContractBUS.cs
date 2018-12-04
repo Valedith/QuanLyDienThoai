@@ -32,13 +32,23 @@ namespace QuanLyDienThoai.BUS
             contract_dal.Delete();
             return "Xóa thành công !";
         }
-        /*
-        public IEnumerable<Minutetable> get_useMinuteList(string id)
+        public string cancelContract(string id)
         {
-            contract_dal.setCONTRACT_cus(id);
-            return contract_dal.get_useMinuteList();
+            contract_dal.setCONTRACT(id);
+            contract_dal.cancelContract();
+            return "Hủy thành công !";
         }
-        */
+        public string cancelContract_bySimID(string sim_id)
+        {
+            contract_dal.setCONTRACT_bySimID(sim_id);
+            contract_dal.cancelContract_bySimID();
+            return "Hủy thành công !";
+        }
+        public string getSimID(string id)
+        {
+            contract_dal.setCONTRACT(id);
+            return contract_dal.getSimID();
+        }
         public string Update(string id,string sim_id, DateTime date, int? fee)
         {
             if (date > DateTime.Now)

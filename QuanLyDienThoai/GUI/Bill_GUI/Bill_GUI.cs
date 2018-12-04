@@ -21,6 +21,7 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
     {
         BillBUS bill = new BillBUS();
         SimBUS sim = new SimBUS();
+        ContractBUS contract = new ContractBUS();
 
         public Bill_GUI()
         {
@@ -71,6 +72,10 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             {
                 check_payment();
             }
+            else if (btn.Tag != null && btn.Tag.Equals("cut"))
+            {
+                cut();
+            }
             else if (btn.Tag != null && btn.Tag.Equals("delete"))
             {
                 delete();
@@ -78,6 +83,23 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             else if (btn.Tag != null && btn.Tag.Equals("refresh"))
             {
                 refresh();
+            }
+        }
+        private void cut()
+        {
+            if (txt_id.Text == null || txt_status.Text == "Đã thanh toán")
+            {
+                Print_MessageBox("Vui lòng chọn hóa đơn hợp lệ để cắt", "Kết quả");
+            }
+            else if(sim.checkifLocked(txt_SIM.Text)==false)
+            {
+                Print_MessageBox("Hợp đồng tương ứng với hóa đơn không hợp lệ và đã bị cắt trước đó", "Kết quả");
+            }
+            else if((DateTime.Now.Date-DateTime.Parse(txt_datecut.Text).Date).Days>=3)
+            {
+                contract.cancelContract_bySimID(txt_SIM.Text);
+                sim.lockSim(txt_SIM.Text);
+                Print_MessageBox("Đã cắt hóa đơn và hợp đồng tương ứng", "Kết quả");
             }
         }
         private void btn_search_Click(object sender, EventArgs e)
@@ -90,8 +112,8 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         {
             txt_id.Text = gridView1.GetFocusedRowCellValue("ID_BILL").ToString();
             txt_SIM.Text = gridView1.GetFocusedRowCellValue("ID_SIM").ToString();
-            txt_dateex.Text = gridView1.GetFocusedRowCellValue("DATE_EXPORT").ToString();
-            txt_datecut.Text = gridView1.GetFocusedRowCellValue("DATE_CUT").ToString();
+            txt_dateex.Text = DateTime.Parse(gridView1.GetFocusedRowCellValue("DATE_EXPORT").ToString()).ToString("dd/MM/yyyy");
+            txt_datecut.Text = DateTime.Parse(gridView1.GetFocusedRowCellValue("DATE_CUT").ToString()).ToString("dd/MM/yyyy");
             txt_postage.Text = gridView1.GetFocusedRowCellValue("POSTAGE").ToString();
             txt_fare.Text = gridView1.GetFocusedRowCellValue("FARE").ToString();
             if (Convert.ToBoolean(gridView1.GetFocusedRowCellValue("STATUS")) == true)
@@ -181,6 +203,10 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
                 table_bill.DataSource = new BindingSource(bill.GetAll(), "");
             }                        
         }
-        
+
+        private void btn_detail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

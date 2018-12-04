@@ -62,31 +62,38 @@ namespace QuanLyDienThoai.DAL
 
             db.Entry(contract).State = EntityState.Detached;
         }
-        /*
-        public IEnumerable<Minutetable> get_useMinuteList()
+        public void cancelContract()
         {
-            var query = db.CONTRACTs
-                 .Join(db.FAREs,
-                       con => con.ID_SIM,
-                       fa => fa.ID_SIM,
-                       (con, fa) => new { con, fa })
-                 .Join(db.SIMs,
-                       com => com.con.ID_SIM,
-                       sim => sim.ID_SIM,
-                       (com, sim) => new { com, sim })
-                 .Where(z => z.com.con.ID_CUSTOMER == contract.ID_CUSTOMER)
-                 .Select(z => new Minutetable
-                 {
-                     ID_CUSTOMER = z.com.con.ID_CUSTOMER,
-                     ID_SIM = (int)z.com.con.ID_SIM,
-                     TIME_STARTA7 = z.com.fa.TIME_STARTA7,
-                     TIME_STARTB7 = z.com.fa.TIME_STARTB7,
-                     TIME_STOPA23 = z.com.fa.TIME_STOPA23,
-                     TIME_STOPB23 = z.com.fa.TIME_STOPB23
-                 });
-            return query.ToList();            
+            var cancel_contract = db.CONTRACTs.First(p => p.ID_CONTRACT == contract.ID_CONTRACT);
+
+            cancel_contract.STATUS = false;
+            db.SaveChanges();
+
+            db.Entry(cancel_contract).State = EntityState.Detached;
         }
-        */
+        //
+        public void setCONTRACT_bySimID(string sim_id)
+        {
+            this.contract.ID_SIM = sim_id;
+        }
+        //
+        public void cancelContract_bySimID()
+        {
+            var cancel_contract = db.CONTRACTs.First(p => p.ID_SIM == contract.ID_SIM);
+
+            cancel_contract.STATUS = false;
+            db.SaveChanges();
+
+            db.Entry(cancel_contract).State = EntityState.Detached;
+        }
+        public string getSimID()
+        {
+            return (from h in db.CONTRACTs
+                    where h.ID_CONTRACT.Equals(contract.ID_CONTRACT)
+                    select h.ID_SIM).FirstOrDefault();
+        }
+        //1 Hợp đồng chỉ có 1 SIM => KTra nếu SIM khóa thì hợp đồng đã bị hủy.
+        
         public void Update()
         {
             var edited_contract = db.CONTRACTs.First(p => p.ID_CONTRACT == contract.ID_CONTRACT);

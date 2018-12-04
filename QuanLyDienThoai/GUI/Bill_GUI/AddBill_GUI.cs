@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace QuanLyDienThoai.GUI.Bill_GUI
 {
@@ -20,23 +21,6 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         public AddBill_GUI()
         {
             InitializeComponent();
-            cb_sim_Load();
-        }
-
-        private void cb_sim_Load()
-        {
-            cb_Sim.DataSource = sim.GetAll().AsEnumerable().Select(row => new
-            {
-                Text = String.Format("{0,5}", row.ID_SIM),
-                Value = row.ID_SIM
-            }).ToList();
-
-            cb_Sim.DisplayMember = "Text";
-            cb_Sim.ValueMember = "Value";
-
-            cb_Sim.SelectedItem = null;
-            cb_Sim.Text = "Mã sim";
-
         }
         // Function click các nút button để thực hiện các thao tác
         private void function_panel_btn_ButtonClick(object sender, ButtonEventArgs e)
@@ -103,12 +87,20 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         // Function Thêm hóa đơn
         private void Add()
         {
-            var Id_SIM = cb_Sim.SelectedValue.ToString();
-            var date_export = date_Export.Value;
-            var date_cut = date_Export.Value.AddMonths(1);
-            var TotalFare = detail.GetFare(Id_SIM, date_export , date_cut );
-            bill.Create(Id_SIM, date_export, date_cut, Convert.ToInt32(num_Postage.Value),TotalFare + Convert.ToInt32(num_Postage.Value), false);
-            Print_MessageBox("Thêm thành công hóa đơn", "Thông báo thêm");
+            
+            if (sim.checkifLocked(txt_SIM.Text) == false)
+            {
+                Print_MessageBox("SIM không hợp lệ và đã bị khóa ! ", "Kết quả");
+            }
+            else
+            {
+                var Id_SIM = txt_SIM.Text;
+                var date_export = date_Export.Value;
+                var date_cut = date_Export.Value.AddMonths(1);
+                var TotalFare = detail.GetFare(Id_SIM, date_export, date_cut);
+                bill.Create(Id_SIM, date_export, date_cut, Convert.ToInt32(num_Postage.Value), TotalFare + Convert.ToInt32(num_Postage.Value), false);
+                Print_MessageBox("Thêm thành công hóa đơn", "Thông báo thêm");
+            }
         }
 
         // Function Thêm hóa đơn ==> refresh
@@ -128,8 +120,7 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         // Function làm lại, refresh
         private void Refresh_All()
         {
-            cb_Sim.SelectedItem = null;
-            cb_Sim.Text = "Mã sim";
+            txt_SIM.Text = "";
             num_Postage.Value = 50000;date_Export.Value = DateTime.Now;
         }
 
@@ -137,6 +128,30 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         private void close()
         {
             this.Dispose();
+        }
+
+        private void table_Sim_Load(object sender, EventArgs e)
+        {
+            table_Sim.DataSource = sim.GetAll();
+            table_Sim.MainView.PopulateColumns();
+            ((GridView)table_Sim.MainView).Columns[0].Caption = "Mã sim";
+            ((GridView)table_Sim.MainView).Columns[1].Caption = "Mã khách hàng";
+            ((GridView)table_Sim.MainView).Columns[2].Caption = "Số điện thoại";
+            ((GridView)table_Sim.MainView).Columns[3].Caption = "Tình trạng";
+            ((GridView)table_Sim.MainView).Columns[4].Visible = false;
+            ((GridView)table_Sim.MainView).Columns[5].Visible = false;
+            ((GridView)table_Sim.MainView).Columns[6].Visible = false;
+            ((GridView)table_Sim.MainView).Columns[7].Visible = false;
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            txt_SIM.Text = gridView1.GetFocusedRowCellValue("ID_SIM").ToString();
+        }
+
+        private void btn_empty_Click(object sender, EventArgs e)
+        {
+            txt_SIM.Text = "";
         }
     }
 }

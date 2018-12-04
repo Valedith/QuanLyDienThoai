@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bill_GUI));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions21 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions22 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions23 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions24 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions25 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.pnl_search = new System.Windows.Forms.Panel();
@@ -48,6 +49,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_fare = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_postage = new System.Windows.Forms.TextBox();
             this.lbl_fare = new DevExpress.XtraEditors.LabelControl();
             this.lbl_postage = new DevExpress.XtraEditors.LabelControl();
             this.lbl_status = new DevExpress.XtraEditors.LabelControl();
@@ -58,12 +60,12 @@
             this.txt_datecut = new System.Windows.Forms.TextBox();
             this.lbl_date_cut = new DevExpress.XtraEditors.LabelControl();
             this.pnl_job = new System.Windows.Forms.Panel();
+            this.txt_SIM = new System.Windows.Forms.TextBox();
             this.lbl_id_sim = new DevExpress.XtraEditors.LabelControl();
             this.pnl_name = new System.Windows.Forms.Panel();
-            this.lbl_date_export = new DevExpress.XtraEditors.LabelControl();
-            this.txt_postage = new System.Windows.Forms.TextBox();
             this.txt_dateex = new System.Windows.Forms.TextBox();
-            this.txt_SIM = new System.Windows.Forms.TextBox();
+            this.lbl_date_export = new DevExpress.XtraEditors.LabelControl();
+            this.btn_detail = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_bill)).BeginInit();
@@ -132,12 +134,13 @@
             this.Button_exe_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Button_exe_panel.ButtonInterval = 40;
             this.Button_exe_panel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions21, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "add", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions22, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "pay", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions23, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "delete", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "add", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "pay", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "delete", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Cắt", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "cut", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm tươi", true, windowsUIButtonImageOptions24, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions25, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "print", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm tươi", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "print", -1, false)});
             this.Button_exe_panel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Button_exe_panel.ForeColor = System.Drawing.Color.White;
             this.Button_exe_panel.Location = new System.Drawing.Point(35, 5);
@@ -195,6 +198,7 @@
             // 
             // pnl_form_input_customer
             // 
+            this.pnl_form_input_customer.Controls.Add(this.btn_detail);
             this.pnl_form_input_customer.Controls.Add(this.panel4);
             this.pnl_form_input_customer.Controls.Add(this.panel3);
             this.pnl_form_input_customer.Controls.Add(this.panel2);
@@ -263,6 +267,17 @@
             this.panel2.Size = new System.Drawing.Size(227, 33);
             this.panel2.TabIndex = 23;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_customer_Paint);
+            // 
+            // txt_postage
+            // 
+            this.txt_postage.BackColor = System.Drawing.Color.White;
+            this.txt_postage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_postage.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_postage.Location = new System.Drawing.Point(11, 10);
+            this.txt_postage.Name = "txt_postage";
+            this.txt_postage.ReadOnly = true;
+            this.txt_postage.Size = new System.Drawing.Size(205, 15);
+            this.txt_postage.TabIndex = 9;
             // 
             // lbl_fare
             // 
@@ -369,6 +384,17 @@
             this.pnl_job.TabIndex = 29;
             this.pnl_job.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_customer_Paint);
             // 
+            // txt_SIM
+            // 
+            this.txt_SIM.BackColor = System.Drawing.Color.White;
+            this.txt_SIM.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_SIM.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_SIM.Location = new System.Drawing.Point(11, 9);
+            this.txt_SIM.Name = "txt_SIM";
+            this.txt_SIM.ReadOnly = true;
+            this.txt_SIM.Size = new System.Drawing.Size(205, 15);
+            this.txt_SIM.TabIndex = 9;
+            // 
             // lbl_id_sim
             // 
             this.lbl_id_sim.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -389,28 +415,6 @@
             this.pnl_name.TabIndex = 22;
             this.pnl_name.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_customer_Paint);
             // 
-            // lbl_date_export
-            // 
-            this.lbl_date_export.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_date_export.Appearance.Options.UseFont = true;
-            this.lbl_date_export.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lbl_date_export.Location = new System.Drawing.Point(57, 64);
-            this.lbl_date_export.Name = "lbl_date_export";
-            this.lbl_date_export.Size = new System.Drawing.Size(109, 33);
-            this.lbl_date_export.TabIndex = 21;
-            this.lbl_date_export.Text = "Ngày lập phiếu";
-            // 
-            // txt_postage
-            // 
-            this.txt_postage.BackColor = System.Drawing.Color.White;
-            this.txt_postage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_postage.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_postage.Location = new System.Drawing.Point(11, 10);
-            this.txt_postage.Name = "txt_postage";
-            this.txt_postage.ReadOnly = true;
-            this.txt_postage.Size = new System.Drawing.Size(205, 15);
-            this.txt_postage.TabIndex = 9;
-            // 
             // txt_dateex
             // 
             this.txt_dateex.BackColor = System.Drawing.Color.White;
@@ -422,16 +426,32 @@
             this.txt_dateex.Size = new System.Drawing.Size(205, 15);
             this.txt_dateex.TabIndex = 9;
             // 
-            // txt_SIM
+            // lbl_date_export
             // 
-            this.txt_SIM.BackColor = System.Drawing.Color.White;
-            this.txt_SIM.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_SIM.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_SIM.Location = new System.Drawing.Point(11, 9);
-            this.txt_SIM.Name = "txt_SIM";
-            this.txt_SIM.ReadOnly = true;
-            this.txt_SIM.Size = new System.Drawing.Size(205, 15);
-            this.txt_SIM.TabIndex = 9;
+            this.lbl_date_export.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_date_export.Appearance.Options.UseFont = true;
+            this.lbl_date_export.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lbl_date_export.Location = new System.Drawing.Point(57, 64);
+            this.lbl_date_export.Name = "lbl_date_export";
+            this.lbl_date_export.Size = new System.Drawing.Size(109, 33);
+            this.lbl_date_export.TabIndex = 21;
+            this.lbl_date_export.Text = "Ngày lập phiếu";
+            // 
+            // btn_detail
+            // 
+            this.btn_detail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btn_detail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btn_detail.FlatAppearance.BorderSize = 0;
+            this.btn_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_detail.Font = new System.Drawing.Font("Tahoma", 8.5F);
+            this.btn_detail.ForeColor = System.Drawing.Color.White;
+            this.btn_detail.Location = new System.Drawing.Point(829, 14);
+            this.btn_detail.Name = "btn_detail";
+            this.btn_detail.Size = new System.Drawing.Size(46, 33);
+            this.btn_detail.TabIndex = 36;
+            this.btn_detail.Text = "Xem";
+            this.btn_detail.UseVisualStyleBackColor = false;
+            this.btn_detail.Click += new System.EventHandler(this.btn_detail_Click);
             // 
             // Bill_GUI
             // 
@@ -500,5 +520,6 @@
         private System.Windows.Forms.TextBox txt_SIM;
         private System.Windows.Forms.TextBox txt_dateex;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_detail;
     }
 }
