@@ -108,12 +108,17 @@ namespace QuanLyDienThoai.GUI.Fare_GUI
         // Functio sửa row
         private void edit()
         {
-            fare.Update(txt_id.Text, Convert.ToInt32(num_fare.Value), TimeSpan.Parse(time_start.Time.TimeOfDay.ToString()), TimeSpan.Parse(time_stop.Time.TimeOfDay.ToString()));
-            if (txt_id.Text == "DAY")
-                fare.Update_rest("NIGHT", TimeSpan.Parse(time_stop.Time.TimeOfDay.ToString()), TimeSpan.Parse(time_start.Time.TimeOfDay.ToString()));
+            if(time_start.Time==time_stop.Time)
+                Print_MessageBox("Khung giờ không hợp lệ ! Vui lòng nhập lại !", "Kết quả");
             else
-                fare.Update_rest("DAY", TimeSpan.Parse(time_start.Time.TimeOfDay.ToString()), TimeSpan.Parse(time_stop.Time.TimeOfDay.ToString()));
-            Print_MessageBox("Sửa thông tin khách hàng thành công", "Thông báo sửa");
+            {
+                fare.Update(txt_id.Text, Convert.ToInt32(num_fare.Value), TimeSpan.Parse(time_start.Time.TimeOfDay.ToString()), TimeSpan.Parse(time_stop.Time.TimeOfDay.ToString()));
+                if (txt_id.Text == "DAY")
+                    fare.Update_rest("NIGHT", TimeSpan.Parse(time_stop.Time.TimeOfDay.ToString()), TimeSpan.Parse(time_start.Time.TimeOfDay.ToString()));
+                else
+                    fare.Update_rest("DAY", TimeSpan.Parse(time_start.Time.TimeOfDay.ToString()), TimeSpan.Parse(time_stop.Time.TimeOfDay.ToString()));
+                Print_MessageBox("Sửa thông tin phí cước theo khung giờ thành công !", "Thông báo sửa");
+            }
             table_fare.DataSource = new BindingSource(fare.GetAll(), "");
         }
     }

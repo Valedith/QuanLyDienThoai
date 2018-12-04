@@ -348,3 +348,4 @@ C:\Users\User\Desktop\QuanLyDienThoai\QuanLyDienThoai\bin\Debug\ja\DevExpress.Pi
 C:\Users\User\Desktop\QuanLyDienThoai\QuanLyDienThoai\bin\Debug\ru\DevExpress.PivotGrid.v18.2.Core.resources.dll
 C:\Users\User\Desktop\QuanLyDienThoai\QuanLyDienThoai\obj\Debug\QuanLyDienThoai.exe
 C:\Users\User\Desktop\QuanLyDienThoai\QuanLyDienThoai\obj\Debug\QuanLyDienThoai.pdb
+C:\Users\User\Desktop\QuanLyDienThoai\QuanLyDienThoai\obj\Debug\QuanLyDienThoai.GUI.Sim_GUI.DetailSIM_GUI.resources

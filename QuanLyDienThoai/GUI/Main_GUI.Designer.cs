@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_GUI));
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
             this.pnl_title_winform = new System.Windows.Forms.Panel();
             this.lbl_time = new System.Windows.Forms.Label();
             this.pnl_icon_logo = new System.Windows.Forms.Panel();
@@ -59,15 +60,17 @@
             this.title_item_useservice = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.titlebar_service = new DevExpress.XtraBars.Navigation.TileBar();
             this.pnl_all_service = new DevExpress.XtraBars.Navigation.NavigationFrame();
+            this.pnl_service_sim = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pnl_service_dashboard = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pnl_service_customer = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.pnl_service_sim = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pnl_service_contracts = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.pnl_service_orders = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pnl_use_service = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.pnl_service_orders = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.pnl_service_fare = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pnl_footer = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.web_link = new System.Windows.Forms.Label();
+            this.title_item_fare = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.pnl_title_winform.SuspendLayout();
             this.pnl_main_logo.SuspendLayout();
             this.pnl_info_group.SuspendLayout();
@@ -259,6 +262,7 @@
             this.titlebar_group_service.Items.Add(this.title_item_contracts);
             this.titlebar_group_service.Items.Add(this.title_item_orders);
             this.titlebar_group_service.Items.Add(this.title_item_useservice);
+            this.titlebar_group_service.Items.Add(this.title_item_fare);
             this.titlebar_group_service.Name = "titlebar_group_service";
             this.titlebar_group_service.Text = "Quản lý dịch vụ";
             // 
@@ -274,9 +278,9 @@
             this.title_item_dashboard.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
             this.title_item_dashboard.AppearanceItem.Selected.Options.UseBackColor = true;
             this.title_item_dashboard.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            tileItemElement7.Text = "Tổng quan";
-            this.title_item_dashboard.Elements.Add(tileItemElement7);
+            tileItemElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement1.Text = "Tổng quan";
+            this.title_item_dashboard.Elements.Add(tileItemElement1);
             this.title_item_dashboard.Id = 0;
             this.title_item_dashboard.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.title_item_dashboard.Name = "title_item_dashboard";
@@ -296,9 +300,9 @@
             this.title_item_customers.AppearanceItem.Selected.Options.UseBorderColor = true;
             this.title_item_customers.AppearanceItem.Selected.Options.UseForeColor = true;
             this.title_item_customers.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            tileItemElement8.Text = "Khách hàng";
-            this.title_item_customers.Elements.Add(tileItemElement8);
+            tileItemElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            tileItemElement2.Text = "Khách hàng";
+            this.title_item_customers.Elements.Add(tileItemElement2);
             this.title_item_customers.Id = 1;
             this.title_item_customers.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.title_item_customers.Name = "title_item_customers";
@@ -314,9 +318,9 @@
             this.title_item_sim.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
             this.title_item_sim.AppearanceItem.Selected.Options.UseBackColor = true;
             this.title_item_sim.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            tileItemElement9.Text = "Danh sách Sim";
-            this.title_item_sim.Elements.Add(tileItemElement9);
+            tileItemElement3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            tileItemElement3.Text = "Danh sách Sim";
+            this.title_item_sim.Elements.Add(tileItemElement3);
             this.title_item_sim.Id = 2;
             this.title_item_sim.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.title_item_sim.Name = "title_item_sim";
@@ -332,9 +336,9 @@
             this.title_item_contracts.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
             this.title_item_contracts.AppearanceItem.Selected.Options.UseBackColor = true;
             this.title_item_contracts.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            tileItemElement10.Text = "Hợp đồng";
-            this.title_item_contracts.Elements.Add(tileItemElement10);
+            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            tileItemElement4.Text = "Hợp đồng";
+            this.title_item_contracts.Elements.Add(tileItemElement4);
             this.title_item_contracts.Id = 3;
             this.title_item_contracts.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.title_item_contracts.Name = "title_item_contracts";
@@ -352,9 +356,9 @@
             this.title_item_orders.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
             this.title_item_orders.AppearanceItem.Selected.Options.UseBackColor = true;
             this.title_item_orders.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            tileItemElement11.Text = "Hóa đơn";
-            this.title_item_orders.Elements.Add(tileItemElement11);
+            tileItemElement5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            tileItemElement5.Text = "Hóa đơn";
+            this.title_item_orders.Elements.Add(tileItemElement5);
             this.title_item_orders.Id = 4;
             this.title_item_orders.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.title_item_orders.Name = "title_item_orders";
@@ -370,9 +374,9 @@
             this.title_item_useservice.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
             this.title_item_useservice.AppearanceItem.Selected.Options.UseBackColor = true;
             this.title_item_useservice.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            tileItemElement12.Text = "Chi tiết sử dụng";
-            this.title_item_useservice.Elements.Add(tileItemElement12);
+            tileItemElement6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            tileItemElement6.Text = "Chi tiết sử dụng";
+            this.title_item_useservice.Elements.Add(tileItemElement6);
             this.title_item_useservice.Id = 5;
             this.title_item_useservice.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.title_item_useservice.Name = "title_item_useservice";
@@ -387,9 +391,9 @@
             this.titlebar_service.Location = new System.Drawing.Point(217, 33);
             this.titlebar_service.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.titlebar_service.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.titlebar_service.MaxId = 7;
+            this.titlebar_service.MaxId = 9;
             this.titlebar_service.Name = "titlebar_service";
-            this.titlebar_service.Position = 176;
+            this.titlebar_service.Position = 347;
             this.titlebar_service.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.titlebar_service.SelectedItem = this.title_item_sim;
             this.titlebar_service.SelectionBorderWidth = 2;
@@ -408,6 +412,7 @@
             this.pnl_all_service.Controls.Add(this.pnl_service_contracts);
             this.pnl_all_service.Controls.Add(this.pnl_use_service);
             this.pnl_all_service.Controls.Add(this.pnl_service_orders);
+            this.pnl_all_service.Controls.Add(this.pnl_service_fare);
             this.pnl_all_service.Location = new System.Drawing.Point(217, 143);
             this.pnl_all_service.Name = "pnl_all_service";
             this.pnl_all_service.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
@@ -416,45 +421,49 @@
             this.pnl_service_sim,
             this.pnl_service_contracts,
             this.pnl_service_orders,
-            this.pnl_use_service});
+            this.pnl_use_service,
+            this.pnl_service_fare});
             this.pnl_all_service.SelectedPage = this.pnl_service_sim;
             this.pnl_all_service.Size = new System.Drawing.Size(885, 527);
             this.pnl_all_service.TabIndex = 16;
             this.pnl_all_service.Text = "navigationFrame1";
             // 
+            // pnl_service_sim
+            // 
+            this.pnl_service_sim.Name = "pnl_service_sim";
+            this.pnl_service_sim.Size = new System.Drawing.Size(885, 527);
+            // 
             // pnl_service_dashboard
             // 
-            this.pnl_service_dashboard.Caption = "pnl_service_dashboard";
             this.pnl_service_dashboard.Name = "pnl_service_dashboard";
-            this.pnl_service_dashboard.Size = new System.Drawing.Size(809, 477);
+            this.pnl_service_dashboard.Size = new System.Drawing.Size(885, 527);
             // 
             // pnl_service_customer
             // 
             this.pnl_service_customer.Caption = "pnl_service_customer";
             this.pnl_service_customer.Name = "pnl_service_customer";
-            this.pnl_service_customer.Size = new System.Drawing.Size(809, 477);
-            // 
-            // pnl_service_sim
-            // 
-            this.pnl_service_sim.Name = "pnl_service_sim";
-            this.pnl_service_sim.Size = new System.Drawing.Size(809, 477);
+            this.pnl_service_customer.Size = new System.Drawing.Size(885, 527);
             // 
             // pnl_service_contracts
             // 
+            this.pnl_service_contracts.Caption = "pnl_service_contracts";
             this.pnl_service_contracts.Name = "pnl_service_contracts";
-            this.pnl_service_contracts.Size = new System.Drawing.Size(809, 477);
-            // 
-            // pnl_service_orders
-            // 
-            this.pnl_service_orders.Caption = "pnl_service_orders";
-            this.pnl_service_orders.Name = "pnl_service_orders";
-            this.pnl_service_orders.Size = new System.Drawing.Size(809, 477);
+            this.pnl_service_contracts.Size = new System.Drawing.Size(885, 527);
             // 
             // pnl_use_service
             // 
-            this.pnl_use_service.Caption = "pnl_use_service";
             this.pnl_use_service.Name = "pnl_use_service";
-            this.pnl_use_service.Size = new System.Drawing.Size(809, 477);
+            this.pnl_use_service.Size = new System.Drawing.Size(885, 527);
+            // 
+            // pnl_service_orders
+            // 
+            this.pnl_service_orders.Name = "pnl_service_orders";
+            this.pnl_service_orders.Size = new System.Drawing.Size(885, 527);
+            // 
+            // pnl_service_fare
+            // 
+            this.pnl_service_fare.Name = "pnl_service_fare";
+            this.pnl_service_fare.Size = new System.Drawing.Size(885, 527);
             // 
             // pnl_footer
             // 
@@ -488,6 +497,22 @@
             this.web_link.TabIndex = 5;
             this.web_link.Text = "Liên kết tới website: ";
             this.web_link.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // title_item_fare
+            // 
+            this.title_item_fare.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.title_item_fare.AppearanceItem.Normal.BorderColor = System.Drawing.Color.White;
+            this.title_item_fare.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.title_item_fare.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.title_item_fare.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.title_item_fare.AppearanceItem.Selected.Options.UseBackColor = true;
+            this.title_item_fare.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            tileItemElement7.Text = "Cước phí theo khung giờ";
+            this.title_item_fare.Elements.Add(tileItemElement7);
+            this.title_item_fare.Id = 6;
+            this.title_item_fare.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.title_item_fare.Name = "title_item_fare";
             // 
             // Main_GUI
             // 
@@ -556,5 +581,7 @@
         private System.Windows.Forms.Panel pnl_footer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label web_link;
+        private DevExpress.XtraBars.Navigation.NavigationPage pnl_service_fare;
+        private DevExpress.XtraBars.Navigation.TileBarItem title_item_fare;
     }
 }

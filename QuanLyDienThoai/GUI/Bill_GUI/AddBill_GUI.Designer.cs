@@ -31,15 +31,16 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions16 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBill_GUI));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions17 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions18 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions19 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions20 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.function_panel_btn = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.lbl_name = new DevExpress.XtraEditors.LabelControl();
             this.form_info = new System.Windows.Forms.Panel();
+            this.btn_empty = new System.Windows.Forms.Button();
             this.pnl_job = new System.Windows.Forms.Panel();
             this.num_Postage = new System.Windows.Forms.NumericUpDown();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -47,15 +48,14 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             this.date_Export = new System.Windows.Forms.DateTimePicker();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pnl_name = new System.Windows.Forms.Panel();
+            this.txt_SIM = new System.Windows.Forms.TextBox();
             this.pnl_window_add = new System.Windows.Forms.Panel();
             this.table_Sim = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txt_SIM = new System.Windows.Forms.TextBox();
-            this.title_winform = new System.Windows.Forms.Label();
-            this.exit_winform = new System.Windows.Forms.Panel();
-            this.pnl_icon_logo = new System.Windows.Forms.Panel();
             this.pnl_title_winform = new System.Windows.Forms.Panel();
-            this.btn_empty = new System.Windows.Forms.Button();
+            this.pnl_icon_logo = new System.Windows.Forms.Panel();
+            this.exit_winform = new System.Windows.Forms.Panel();
+            this.title_winform = new System.Windows.Forms.Label();
             this.form_info.SuspendLayout();
             this.pnl_job.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_Postage)).BeginInit();
@@ -81,17 +81,17 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             this.function_panel_btn.AppearanceButton.Pressed.Options.UseFont = true;
             this.function_panel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.function_panel_btn.ButtonInterval = 20;
-            windowsUIButtonImageOptions16.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions16.Image")));
-            windowsUIButtonImageOptions17.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions17.Image")));
-            windowsUIButtonImageOptions18.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions18.Image")));
-            windowsUIButtonImageOptions19.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions19.Image")));
-            windowsUIButtonImageOptions20.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions20.Image")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
             this.function_panel_btn.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions16, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Thêm mới", true, windowsUIButtonImageOptions17, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_new", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Đóng", true, windowsUIButtonImageOptions18, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_close", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm lại", true, windowsUIButtonImageOptions19, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đóng", true, windowsUIButtonImageOptions20, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Thêm mới", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_new", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm và Đóng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "save_close", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm lại", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đóng", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "close", -1, false)});
             this.function_panel_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.function_panel_btn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.function_panel_btn.Location = new System.Drawing.Point(0, 324);
@@ -127,6 +127,22 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             this.form_info.Size = new System.Drawing.Size(502, 267);
             this.form_info.TabIndex = 15;
             this.form_info.Paint += new System.Windows.Forms.PaintEventHandler(this.form_info_Paint);
+            // 
+            // btn_empty
+            // 
+            this.btn_empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btn_empty.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btn_empty.FlatAppearance.BorderSize = 0;
+            this.btn_empty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empty.Font = new System.Drawing.Font("Tahoma", 8.5F);
+            this.btn_empty.ForeColor = System.Drawing.Color.White;
+            this.btn_empty.Location = new System.Drawing.Point(430, 13);
+            this.btn_empty.Name = "btn_empty";
+            this.btn_empty.Size = new System.Drawing.Size(46, 33);
+            this.btn_empty.TabIndex = 19;
+            this.btn_empty.Text = "Rỗng";
+            this.btn_empty.UseVisualStyleBackColor = false;
+            this.btn_empty.Click += new System.EventHandler(this.btn_empty_Click);
             // 
             // pnl_job
             // 
@@ -206,6 +222,14 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             this.pnl_name.TabIndex = 16;
             this.pnl_name.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_info_Paint);
             // 
+            // txt_SIM
+            // 
+            this.txt_SIM.Location = new System.Drawing.Point(3, 6);
+            this.txt_SIM.Name = "txt_SIM";
+            this.txt_SIM.ReadOnly = true;
+            this.txt_SIM.Size = new System.Drawing.Size(290, 22);
+            this.txt_SIM.TabIndex = 19;
+            // 
             // pnl_window_add
             // 
             this.pnl_window_add.Controls.Add(this.table_Sim);
@@ -235,45 +259,6 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             this.gridView1.Name = "gridView1";
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
-            // txt_SIM
-            // 
-            this.txt_SIM.Location = new System.Drawing.Point(3, 6);
-            this.txt_SIM.Name = "txt_SIM";
-            this.txt_SIM.ReadOnly = true;
-            this.txt_SIM.Size = new System.Drawing.Size(290, 22);
-            this.txt_SIM.TabIndex = 19;
-            // 
-            // title_winform
-            // 
-            this.title_winform.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.title_winform.ForeColor = System.Drawing.Color.White;
-            this.title_winform.Location = new System.Drawing.Point(31, 4);
-            this.title_winform.Name = "title_winform";
-            this.title_winform.Size = new System.Drawing.Size(62, 25);
-            this.title_winform.TabIndex = 0;
-            this.title_winform.Text = "Thêm";
-            this.title_winform.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // exit_winform
-            // 
-            this.exit_winform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exit_winform.BackgroundImage")));
-            this.exit_winform.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.exit_winform.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exit_winform.Location = new System.Drawing.Point(480, 5);
-            this.exit_winform.Name = "exit_winform";
-            this.exit_winform.Size = new System.Drawing.Size(23, 23);
-            this.exit_winform.TabIndex = 1;
-            this.exit_winform.Click += new System.EventHandler(this.exit_winform_Click);
-            // 
-            // pnl_icon_logo
-            // 
-            this.pnl_icon_logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_icon_logo.BackgroundImage")));
-            this.pnl_icon_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnl_icon_logo.Location = new System.Drawing.Point(10, 5);
-            this.pnl_icon_logo.Name = "pnl_icon_logo";
-            this.pnl_icon_logo.Size = new System.Drawing.Size(23, 23);
-            this.pnl_icon_logo.TabIndex = 3;
-            // 
             // pnl_title_winform
             // 
             this.pnl_title_winform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
@@ -285,21 +270,36 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             this.pnl_title_winform.Size = new System.Drawing.Size(992, 35);
             this.pnl_title_winform.TabIndex = 12;
             // 
-            // btn_empty
+            // pnl_icon_logo
             // 
-            this.btn_empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
-            this.btn_empty.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
-            this.btn_empty.FlatAppearance.BorderSize = 0;
-            this.btn_empty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_empty.Font = new System.Drawing.Font("Tahoma", 8.5F);
-            this.btn_empty.ForeColor = System.Drawing.Color.White;
-            this.btn_empty.Location = new System.Drawing.Point(430, 13);
-            this.btn_empty.Name = "btn_empty";
-            this.btn_empty.Size = new System.Drawing.Size(46, 33);
-            this.btn_empty.TabIndex = 19;
-            this.btn_empty.Text = "Rỗng";
-            this.btn_empty.UseVisualStyleBackColor = false;
-            this.btn_empty.Click += new System.EventHandler(this.btn_empty_Click);
+            this.pnl_icon_logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_icon_logo.BackgroundImage")));
+            this.pnl_icon_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_icon_logo.Location = new System.Drawing.Point(10, 5);
+            this.pnl_icon_logo.Name = "pnl_icon_logo";
+            this.pnl_icon_logo.Size = new System.Drawing.Size(23, 23);
+            this.pnl_icon_logo.TabIndex = 3;
+            // 
+            // exit_winform
+            // 
+            this.exit_winform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exit_winform.BackgroundImage")));
+            this.exit_winform.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.exit_winform.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exit_winform.Location = new System.Drawing.Point(961, 3);
+            this.exit_winform.Name = "exit_winform";
+            this.exit_winform.Size = new System.Drawing.Size(23, 23);
+            this.exit_winform.TabIndex = 1;
+            this.exit_winform.Click += new System.EventHandler(this.exit_winform_Click);
+            // 
+            // title_winform
+            // 
+            this.title_winform.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.title_winform.ForeColor = System.Drawing.Color.White;
+            this.title_winform.Location = new System.Drawing.Point(31, 4);
+            this.title_winform.Name = "title_winform";
+            this.title_winform.Size = new System.Drawing.Size(62, 25);
+            this.title_winform.TabIndex = 0;
+            this.title_winform.Text = "Thêm";
+            this.title_winform.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddBill_GUI
             // 

@@ -9,7 +9,6 @@ namespace QuanLyDienThoai.BUS
 {
     class BillBUS
     {
-        string id;
         BillDAL bill_dal = new BillDAL();
         public IEnumerable<BILL> GetAll()
         {

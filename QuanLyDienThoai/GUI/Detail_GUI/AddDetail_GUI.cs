@@ -92,7 +92,7 @@ namespace QuanLyDienThoai.GUI.Detail_GUI
                 }
             }
             else
-                MessageBox.Show("Không tồn tại bất kì dữ liệu ! Vui lòng import log từ bên ngoài !");
+                Print_MessageBox("Không tồn tại bất kì dữ liệu ! Vui lòng import log từ bên ngoài !", "Kết quả");
         }
 
         // Function Thêm khách hàng ==> refresh
@@ -125,7 +125,7 @@ namespace QuanLyDienThoai.GUI.Detail_GUI
                         }
                         else
                         {
-                            MessageBox.Show("File không đúng format");
+                            Print_MessageBox("File không đúng format!", "Kết quả");
                         }
                     }
                 }

@@ -90,7 +90,7 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             
             if (sim.checkifLocked(txt_SIM.Text) == false)
             {
-                Print_MessageBox("SIM không hợp lệ và đã bị khóa ! ", "Kết quả");
+                Print_MessageBox("SIM không hợp lệ và đã bị khóa ! Hãy chọn SIM khác ! ", "Kết quả");
             }
             else
             {

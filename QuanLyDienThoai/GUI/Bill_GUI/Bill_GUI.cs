@@ -95,7 +95,7 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             {
                 Print_MessageBox("Hợp đồng tương ứng với hóa đơn không hợp lệ và đã bị cắt trước đó", "Kết quả");
             }
-            else if((DateTime.Now.Date-DateTime.Parse(txt_datecut.Text).Date).Days>=3)
+            else if((DateTime.Now.Date- DateTime.ParseExact(txt_datecut.Text, "dd/MM/yyyy", null).Date).Days>=3)
             {
                 contract.cancelContract_bySimID(txt_SIM.Text);
                 sim.lockSim(txt_SIM.Text);
@@ -206,7 +206,8 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
 
         private void btn_detail_Click(object sender, EventArgs e)
         {
-
+            Sim_GUI.DetailSIM_GUI detailSIM_GUI = new Sim_GUI.DetailSIM_GUI();
+            detailSIM_GUI.ShowDialog();
         }
     }
 }
