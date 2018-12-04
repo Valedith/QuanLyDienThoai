@@ -94,5 +94,23 @@ namespace QuanLyDienThoai.DAL
             db.Entry(sim).State = EntityState.Detached;
 
         }
+        public void unlockSim()
+        {
+            var lock_sim = db.SIMs.First(p => p.ID_SIM == sim.ID_SIM);
+
+            lock_sim.STATUS = true;
+
+            db.SaveChanges();
+
+            db.Entry(sim).State = EntityState.Detached;
+
+        }
+        public string getCusID()
+        {
+            var cus_id = (from h in db.SIMs
+                         where h.ID_SIM.Equals(sim.ID_SIM)
+                         select h.ID_CUSTOMER).SingleOrDefault();
+            return (string)cus_id;
+        }
     }
 }

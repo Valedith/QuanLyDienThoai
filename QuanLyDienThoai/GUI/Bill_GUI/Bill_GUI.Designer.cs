@@ -35,15 +35,16 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_search = new DevExpress.XtraEditors.SimpleButton();
             this.pnl_search = new System.Windows.Forms.Panel();
             this.txt_search = new System.Windows.Forms.TextBox();
-            this.Button_exe_panel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.table_bill = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_form_input_customer = new System.Windows.Forms.Panel();
+            this.btn_detail = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_status = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -65,7 +66,7 @@
             this.pnl_name = new System.Windows.Forms.Panel();
             this.txt_dateex = new System.Windows.Forms.TextBox();
             this.lbl_date_export = new DevExpress.XtraEditors.LabelControl();
-            this.btn_detail = new System.Windows.Forms.Button();
+            this.Button_exe_panel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.panel1.SuspendLayout();
             this.pnl_search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_bill)).BeginInit();
@@ -83,9 +84,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.Button_exe_panel);
             this.panel1.Controls.Add(this.btn_search);
             this.panel1.Controls.Add(this.pnl_search);
-            this.panel1.Controls.Add(this.Button_exe_panel);
             this.panel1.Location = new System.Drawing.Point(0, 453);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(885, 74);
@@ -122,34 +123,6 @@
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(196, 16);
             this.txt_search.TabIndex = 0;
-            // 
-            // Button_exe_panel
-            // 
-            this.Button_exe_panel.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.Silver;
-            this.Button_exe_panel.AppearanceButton.Hovered.Options.UseForeColor = true;
-            this.Button_exe_panel.AppearanceButton.Normal.ForeColor = System.Drawing.Color.White;
-            this.Button_exe_panel.AppearanceButton.Normal.Options.UseForeColor = true;
-            this.Button_exe_panel.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.White;
-            this.Button_exe_panel.AppearanceButton.Pressed.Options.UseForeColor = true;
-            this.Button_exe_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Button_exe_panel.ButtonInterval = 40;
-            this.Button_exe_panel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "add", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "pay", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "delete", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Cắt", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "cut", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm tươi", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "print", -1, false)});
-            this.Button_exe_panel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button_exe_panel.ForeColor = System.Drawing.Color.White;
-            this.Button_exe_panel.Location = new System.Drawing.Point(35, 5);
-            this.Button_exe_panel.Name = "Button_exe_panel";
-            this.Button_exe_panel.Size = new System.Drawing.Size(468, 66);
-            this.Button_exe_panel.TabIndex = 0;
-            this.Button_exe_panel.Text = "windowsUIButtonPanel1";
-            this.Button_exe_panel.UseButtonBackgroundImages = false;
-            this.Button_exe_panel.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.Button_exe_panel_ButtonClick);
             // 
             // table_bill
             // 
@@ -218,6 +191,22 @@
             this.pnl_form_input_customer.Size = new System.Drawing.Size(878, 212);
             this.pnl_form_input_customer.TabIndex = 4;
             this.pnl_form_input_customer.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_form_input_customer_Paint);
+            // 
+            // btn_detail
+            // 
+            this.btn_detail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btn_detail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
+            this.btn_detail.FlatAppearance.BorderSize = 0;
+            this.btn_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_detail.Font = new System.Drawing.Font("Tahoma", 8.5F);
+            this.btn_detail.ForeColor = System.Drawing.Color.White;
+            this.btn_detail.Location = new System.Drawing.Point(829, 14);
+            this.btn_detail.Name = "btn_detail";
+            this.btn_detail.Size = new System.Drawing.Size(46, 33);
+            this.btn_detail.TabIndex = 36;
+            this.btn_detail.Text = "Xem";
+            this.btn_detail.UseVisualStyleBackColor = false;
+            this.btn_detail.Click += new System.EventHandler(this.btn_detail_Click);
             // 
             // panel4
             // 
@@ -437,21 +426,34 @@
             this.lbl_date_export.TabIndex = 21;
             this.lbl_date_export.Text = "Ngày lập phiếu";
             // 
-            // btn_detail
+            // Button_exe_panel
             // 
-            this.btn_detail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
-            this.btn_detail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(134)))), ((int)(((byte)(244)))));
-            this.btn_detail.FlatAppearance.BorderSize = 0;
-            this.btn_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_detail.Font = new System.Drawing.Font("Tahoma", 8.5F);
-            this.btn_detail.ForeColor = System.Drawing.Color.White;
-            this.btn_detail.Location = new System.Drawing.Point(829, 14);
-            this.btn_detail.Name = "btn_detail";
-            this.btn_detail.Size = new System.Drawing.Size(46, 33);
-            this.btn_detail.TabIndex = 36;
-            this.btn_detail.Text = "Xem";
-            this.btn_detail.UseVisualStyleBackColor = false;
-            this.btn_detail.Click += new System.EventHandler(this.btn_detail_Click);
+            this.Button_exe_panel.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.Silver;
+            this.Button_exe_panel.AppearanceButton.Hovered.Options.UseForeColor = true;
+            this.Button_exe_panel.AppearanceButton.Normal.ForeColor = System.Drawing.Color.White;
+            this.Button_exe_panel.AppearanceButton.Normal.Options.UseForeColor = true;
+            this.Button_exe_panel.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.White;
+            this.Button_exe_panel.AppearanceButton.Pressed.Options.UseForeColor = true;
+            this.Button_exe_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Button_exe_panel.ButtonInterval = 40;
+            this.Button_exe_panel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "add", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "pay", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "delete", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Cắt", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "cut", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Khôi phục", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "repay", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Làm tươi", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "refresh", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "print", -1, false)});
+            this.Button_exe_panel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_exe_panel.ForeColor = System.Drawing.Color.White;
+            this.Button_exe_panel.Location = new System.Drawing.Point(8, 5);
+            this.Button_exe_panel.Name = "Button_exe_panel";
+            this.Button_exe_panel.Size = new System.Drawing.Size(575, 66);
+            this.Button_exe_panel.TabIndex = 3;
+            this.Button_exe_panel.Text = "windowsUIButtonPanel1";
+            this.Button_exe_panel.UseButtonBackgroundImages = false;
+            this.Button_exe_panel.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.Button_exe_panel_ButtonClick);
             // 
             // Bill_GUI
             // 
@@ -494,7 +496,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.GridControl table_bill;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel Button_exe_panel;
         private DevExpress.XtraEditors.SimpleButton btn_search;
         private System.Windows.Forms.Panel pnl_search;
         private System.Windows.Forms.TextBox txt_search;
@@ -521,5 +522,6 @@
         private System.Windows.Forms.TextBox txt_dateex;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_detail;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel Button_exe_panel;
     }
 }

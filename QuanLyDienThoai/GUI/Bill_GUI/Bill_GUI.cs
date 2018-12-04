@@ -76,6 +76,10 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             {
                 cut();
             }
+            else if (btn.Tag != null && btn.Tag.Equals("repay"))
+            {
+                repay();
+            }
             else if (btn.Tag != null && btn.Tag.Equals("delete"))
             {
                 delete();
@@ -145,7 +149,20 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         {
             txt_id.Text = txt_status.Text = txt_fare.Text = txt_datecut.Text =txt_SIM.Text=txt_postage.Text=txt_dateex.Text = "";
         }
-
+        // Function phục hồi
+        private void repay()
+        {
+            if (sim.checkifLocked(txt_SIM.Text) == true && txt_status.Text == "Chưa thanh toán" && (DateTime.Now.Date - DateTime.ParseExact(txt_datecut.Text, "dd/MM/yyyy", null).Date).Days >= 3)
+            {
+                bill.Pay(txt_id.Text);
+                sim.unlockSim(txt_SIM.Text);
+                Print_MessageBox("Đã thanh toán hóa đơn sau ngày cắt !", "Thông báo phục hồi");
+            }
+            else
+            {
+                Print_MessageBox("Hóa đơn không hợp lệ ! Không thể thực hiện thao tác trả sau khi cắt !", "Kết quả");
+            }
+        }
         // Function làm tươi danh sách
         private void refresh()
         {
@@ -187,9 +204,17 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         // Functio sửa row
         private void check_payment()
         {
-            bill.Pay(txt_id.Text);
-            Print_MessageBox("Thanh toán thành công", "Thông báo thanh toán");
-            table_bill.DataSource = new BindingSource(bill.GetAll(), "");
+            if(txt_id.Text!=null && txt_status.Text=="Chưa thanh toán")
+            {
+                bill.Pay(txt_id.Text);
+                Print_MessageBox("Thanh toán thành công", "Thông báo thanh toán");
+                table_bill.DataSource = new BindingSource(bill.GetAll(), "");
+            }
+            else
+            {
+
+                Print_MessageBox("Hóa đơn này đã thanh toán ! Vui lòng chọn hóa đơn khác !", "Thông báo thanh toán");
+            }
         }
 
         // Function delete row

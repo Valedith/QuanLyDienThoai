@@ -100,6 +100,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AccountBUS.cs" />
     <Compile Include="BUS\AdminBUS.cs" />
     <Compile Include="BUS\BillBUS.cs" />
     <Compile Include="BUS\ContractBUS.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="DAL\ACCOUNT.cs">
       <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\ADMIN.cs">
       <DependentUpon>QuanLyDienThoaiDB.tt</DependentUpon>
     </Compile>

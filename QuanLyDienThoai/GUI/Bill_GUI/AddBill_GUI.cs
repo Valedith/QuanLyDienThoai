@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Net.Mail;
+using System.Net;
 
 namespace QuanLyDienThoai.GUI.Bill_GUI
 {
@@ -18,6 +20,7 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
         BillBUS bill = new BillBUS();
         DetailBUS detail = new DetailBUS();
         SimBUS sim = new SimBUS();
+        AccountBUS acc = new AccountBUS();
         public AddBill_GUI()
         {
             InitializeComponent();
@@ -94,11 +97,38 @@ namespace QuanLyDienThoai.GUI.Bill_GUI
             }
             else
             {
+                //Add
                 var Id_SIM = txt_SIM.Text;
                 var date_export = date_Export.Value;
                 var date_cut = date_Export.Value.AddMonths(1);
                 var TotalFare = detail.GetFare(Id_SIM, date_export, date_cut);
                 bill.Create(Id_SIM, date_export, date_cut, Convert.ToInt32(num_Postage.Value), TotalFare + Convert.ToInt32(num_Postage.Value), false);
+                //Send email
+                var email = acc.getEmail(sim.getCusID(txt_SIM.Text));
+                try
+                {
+                    MailMessage message = new MailMessage();
+                    SmtpClient smtp = new SmtpClient();
+                    //Email của mình
+                    message.From = new MailAddress("dickypop1@gmail.com");
+
+                    message.To.Add(new MailAddress(email));
+                    message.Subject = "Hello";
+                    message.Body = "Hello";
+
+                    smtp.Port = 587;
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    smtp.UseDefaultCredentials = false;
+                    //Email và mật khẩu của mình
+                    smtp.Credentials = new NetworkCredential("dickypop1@gmail.com", "dickypop1997");
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Send(message);
+                }
+                catch (Exception ex)
+                {
+                    Print_MessageBox("Gửi mail không thành công !", "Lỗi");
+                }
                 Print_MessageBox("Thêm thành công hóa đơn", "Thông báo thêm");
             }
         }
