@@ -17,6 +17,7 @@ namespace QuanLyDienThoai.GUI.Detail_GUI
     {
         DetailBUS detail = new DetailBUS();
         FareBUS fare = new FareBUS();
+        Random random = new Random();
         int totalMin1, totalMin2;
         public AddDetail_GUI()
         {
@@ -43,12 +44,64 @@ namespace QuanLyDienThoai.GUI.Detail_GUI
             {
                 Refresh_All();
             }
+            else if (btn.Tag != null && btn.Tag.Equals("random_log"))
+            {
+                random_log();
+            }
             else if(btn.Tag != null && btn.Tag.Equals("close"))
             {
                 close();
             }
         }
+        //Function random log
+        private void random_log()
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
 
+            savefile.FileName = ".txt";
+
+            savefile.Filter = "Text files (*.txt)|*.txt";
+
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(savefile.FileName))
+                {
+                    sw.WriteLine("IDSIM\tTGBD\tTGKT");
+                    int itemRows = 0;
+                    while (itemRows < 100)
+                    {
+                        DateTime t1 = RandomDay();
+                        t1 = t1.Add(RandomTimeSpan());
+                        DateTime t2 = t1.Add(RandomTimeSpan());
+                        itemRows++;
+                        var temp = RandomInteger(20);
+                        if (temp < 10)
+                            sw.WriteLine("S0" + temp.ToString() + "\t" + t1.ToString("dd/MM/yyyy HH:mm:ss") + "\t" + t2.ToString("dd/MM/yyyy HH:mm:ss"));
+                        else
+                            sw.WriteLine("S" + temp.ToString() + "\t" + t1.ToString("dd/MM/yyyy HH:mm:ss") + "\t" + t2.ToString("dd/MM/yyyy HH:mm:ss"));
+                    }
+                }
+                Print_MessageBox("Tạo log phát sinh ngẫu nhiên thành công !", "Kết quả");
+            }
+        }
+        private DateTime RandomDay()
+        {
+            DateTime start = new DateTime(1995, 1, 1);
+            int range = (DateTime.Today - start).Days;
+            return start.AddDays(random.Next(range));
+        }
+        private TimeSpan RandomTimeSpan()
+        {
+            TimeSpan start = TimeSpan.FromHours(0);
+            TimeSpan end = TimeSpan.FromHours(24);
+            int maxMinutes = (int)((end - start).TotalMinutes);
+            int minutes = random.Next(maxMinutes);
+            return start.Add(TimeSpan.FromMinutes(minutes));
+        }
+        private int RandomInteger(int max)
+        {
+            return random.Next(1, max);
+        }
         // Function click exit
         private void exit_winform_Click(object sender, EventArgs e)
         {
